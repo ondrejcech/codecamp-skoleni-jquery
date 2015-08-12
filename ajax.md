@@ -45,4 +45,6 @@ $.getJSON('/get-products', {offset: 1}, function (response) {
 });
 ```
 
+* [Získání HTTP hlaviček odpovědi](http://jsfiddle.net/ondrejcech/b409znaj/)
+
 JSONP - možnost, jak pomocí SCRIPT tagu volat požadavek z jiné domény

@@ -10,6 +10,7 @@
 	* [Draggable](https://jqueryui.com/draggable/)
 	* [Droppable](https://jqueryui.com/droppable/)
 	* [Resizable](https://jqueryui.com/resizable/)
+		* Spolu s backbone.js používáme v [Glami editoru setů](http://www.glami.cz/editor/)
 	* [Sortable](https://jqueryui.com/sortable/)
 	* ...
 * Widgets
