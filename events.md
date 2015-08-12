@@ -27,6 +27,20 @@ Pomoci onevent vlastnosti:
 element.onclick = doSomething;
 ```
 
+jQuery:
+
+```js
+$('a').on('click', eventHandledFunction);
+
+// nebo
+
+$('a').click(eventHandledFunction);
+
+// nebo
+
+$('.some-parent-element').on('click', 'a', eventHandledFunction);
+```
+
 Historicky problém s kompatibilitou MS a W3C specifikace (jQuery to řeší za vás)
 
 * Microsoft
@@ -39,20 +53,6 @@ element.attachEvent('onclick', doSomething)
 
 ```js
 element.addEventListener('click',doSomething,false);
-```
-
-* jQuery
-
-```js
-$('a').on('click', eventHandledFunction);
-
-// nebo
-
-$('a').click(eventHandledFunction);
-
-// nebo
-
-$('.some-parent-element').on('click', 'a', eventHandledFunction);
 ```
 
 ## Event order [source](http://www.quirksmode.org/js/events_order.html)
