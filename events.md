@@ -41,7 +41,21 @@ element.attachEvent('onclick', doSomething)
 element.addEventListener('click',doSomething,false);
 ```
 
-## Event order 
+* jQuery
+
+```js
+$('a').on('click', eventHandledFunction);
+
+// nebo
+
+$('a').click(eventHandledFunction);
+
+// nebo
+
+$('.some-parent-element').on('click', 'a', eventHandledFunction);
+```
+
+## Event order [source](http://www.quirksmode.org/js/events_order.html)
 
 Capturing phase (Netscape):
 
@@ -91,7 +105,8 @@ element2.addEventListener('click', doSomething, false /* bubbling phase */)
 $(‘a’).on(‘click’, function (e) {
 	// e = Event object
 	console.log(e.target);
-});```
+});
+```
 
 * e.stopPropagation() - přeruší bublání eventu výš [Příklad](http://jsfiddle.net/ondrejcech/8dj7ns89/)
 
@@ -102,13 +117,22 @@ e.stopImmediatePropagation() - přeruší bublání eventu výš a přeruší vy
 **! return false v event handleru je anti-pattern !**, protože volá jak e.stopPropagation() tak e.preventDefault() a přeruší vykonávání handleru.
 
 ```js
-$("div a").click(function (e) {
+$("div input[type=checkbox]").click(function (e) {
    // Do something else
    return false;
 });
 
-$("div").click(function (e) {
+$("body").click(function (e) {
    // won't be called
 });
 ```
+
+## Throttling functions calls
+Někdy je vhodné vykonat funkci pouze jednou za x ms. Např callback pro scroll, resize nebo mousemove event nemá smysl volat pokaždé:
+
+[Scroll bez throttle funkce](http://jsfiddle.net/ondrejcech/kammzzum/)
+
+[Scroll s throttle funkcí](http://jsfiddle.net/ondrejcech/t9a2sbtv/)
+
+
 
