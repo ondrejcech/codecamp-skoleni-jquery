@@ -22,7 +22,38 @@ $("a").each(function(){
    $(this).css("color", "red");
 });
 
-vs.
+// vs.
 
 $("a").css("color", "red");
+```
+
+Využívejte event bubling
+
+```js
+$('li').each(function () {
+	$(this).click(function () {
+		// do some stuff with list item
+	})
+})
+
+// vs.
+
+$('ul').on('click', 'li', function () {
+	// do some stuff with list item - works event for future list items
+});
+```
+
+Nepoužívejte .data() pokud chcete pracovat s data-atributy - používejte .attr('data-') [Příklad](http://jsfiddle.net/ondrejcech/u44hfmck/)
+
+```js
+<span data-field="old-value"></span>
+
+var $span = $('span');
+
+$span.data('field', 'new-value');
+
+console.log($span.data('field')); // new-value
+console.log($span.attr('data-field')); // old-value (WTF?!)
+console.log($span[0].getAttribute('data-field')); // old-value (WTF?!)
+
 ```

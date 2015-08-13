@@ -127,6 +127,17 @@ $("body").click(function (e) {
 });
 ```
 
+$(document).load() vs $(document).ready()
+* $(document).load() čeká na stažení všech CSS, obrázků a iframů
+* $(document).ready() (resp DOMContentLoaded event) čeká pouze na načtení a naparsování dokumentu - na tuto událost chcete navázat spuštění vašich scriptů
+
+```js
+$(function () {
+	// alias pro $(document).ready()
+	// document loaded - start the fun
+});
+```
+
 ## Throttling functions calls
 Někdy je vhodné vykonat funkci pouze jednou za x ms. Např callback pro scroll, resize nebo mousemove event nemá smysl volat pokaždé:
 
