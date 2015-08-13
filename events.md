@@ -1,13 +1,13 @@
 # jQuery - eventy
+* Události (načtení dokumentu, klik na odkaz, stisk klávesy, změna formulářového prvku, odeslání formuláře, změne velikosti okna, ...), na které můžeme reagovat pomocí callback funkce.
 * Základní stavební kámen každé JS aplikace
 * Uvedeny v Netscape Navigator 2 - první použití pro hover efekt a client side validaci formulářů
-* [Seznam eventů](https://developer.mozilla.org/en-US/docs/Web/Events)
-* V dnešní době eventy snad na úplně všechno
+* V dnešní době eventy snad na úplně všechno [Seznam eventů](https://developer.mozilla.org/en-US/docs/Web/Events)
 * Pro pohodlnou práci s touch eventy se hodí třeba [hammer.js](http://hammerjs.github.io/) (nebo [jQueryMobile](https://jquerymobile.com/))
 
 ## Registrace eventů
 
-V HTML šabloně **to nechceš**:
+V HTML šabloně, **to nechceš**:
 
 ```js
 <a href="somewhere.html" onclick="alert('I\'ve been clicked!')"></a>
@@ -98,7 +98,7 @@ element1.addEventListener('click', doSomething2, true /* capturing phase */)
 element2.addEventListener('click', doSomething, false /* bubbling phase */)
 ```
 
-**jQuery používá bubbling phase**
+**jQuery používá event bubbling**
 
 ## Event object
 ```js
@@ -107,6 +107,8 @@ $(‘a’).on(‘click’, function (e) {
 	console.log(e.target);
 });
 ```
+
+[Vlastnosti event objectu](http://jsfiddle.net/ondrejcech/eL9dw1rz/)
 
 * e.stopPropagation() - přeruší bublání eventu výš [Příklad](http://jsfiddle.net/ondrejcech/8dj7ns89/)
 
