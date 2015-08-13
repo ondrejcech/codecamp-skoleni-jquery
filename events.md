@@ -112,7 +112,7 @@ $(‘a’).on(‘click’, function (e) {
 
 * e.preventDefault() - zruší defaultní akci (odkazu, formuláře, checkboxu) [Příklad](http://jsfiddle.net/ondrejcech/spgzebxn/)
 
-e.stopImmediatePropagation() - přeruší bublání eventu výš a přeruší vykonávání dalších handlerů [Příklad](http://jsfiddle.net/ondrejcech/1dks7yte/1/)
+* e.stopImmediatePropagation() - přeruší bublání eventu výš a přeruší vykonávání dalších handlerů [Příklad](http://jsfiddle.net/ondrejcech/1dks7yte/1/)
 
 **! return false v event handleru je anti-pattern !**, protože volá jak e.stopPropagation() tak e.preventDefault() a přeruší vykonávání handleru.
 
@@ -133,6 +133,13 @@ Někdy je vhodné vykonat funkci pouze jednou za x ms. Např callback pro scroll
 [Scroll bez throttle funkce](http://jsfiddle.net/ondrejcech/kammzzum/)
 
 [Scroll s throttle funkcí](http://jsfiddle.net/ondrejcech/t9a2sbtv/)
+
+## Příklady
+
+[Simple click](http://jsfiddle.net/ondrejcech/h0grc45u/)
+[Event bubbling example](http://jsfiddle.net/ondrejcech/up6L7tah/)
+[Click on future elements](http://jsfiddle.net/ondrejcech/g1f34afx/)
+[Custom events](http://jsfiddle.net/ondrejcech/ed6he5oa/)
 
 
 
