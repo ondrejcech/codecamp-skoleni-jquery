@@ -12,7 +12,7 @@ $('div ul li').show().addClass('.active')
 // or
 var $elements = $('div ul li');
 $elements.show();
-$elements.addClass('.active')
+$elements.addClass('.active');
 ```
 
 Nechápete, jak jQuery funguje
